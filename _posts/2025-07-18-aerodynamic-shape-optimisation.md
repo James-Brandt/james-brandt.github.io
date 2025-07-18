@@ -11,7 +11,9 @@ math: true
 
 ## Rationale
 
-In mechatronic and aerospace design, aerodynamic efficiency is a critical determinant of performance, fuel consumption, and thus emissions. Minimising aerodynamic drag has been a long-term focus in engineering disciplines due to its consequences on energy efficiency and operating costs. However, manual optimisation of complex shapes remains time-consuming and limited by human intuition. This project investigates the utilisation of evolutionary algorithms to autonomously optimise a three-dimensional axisymmetric object’s geometry to reduce its aerodynamic drag. By simulating 1000 generations of Differential Evolution followed by 1000 iterations of Covariance Matrix Adaptation Evolution Strategy (CMA-ES), the programme aims to refine shapes using physics-informed fitness evaluations. The objective of this programme is to demonstrate the applicability of machine learning in solving real-world engineering problems involving fluid dynamics, stability, and form efficiency.
+In mechatronic and aerospace design, aerodynamic efficiency is a critical determinant of performance, fuel consumption, and thus emissions. Minimising aerodynamic drag has been a long-term focus in engineering disciplines due to its consequences on energy efficiency and operating costs. However, manual optimisation of complex shapes remains time-consuming and limited by human intuition. 
+
+This project investigates the utilisation of evolutionary algorithms to autonomously optimise a three-dimensional axisymmetric object’s geometry to reduce its aerodynamic drag. By simulating 1000 generations of Differential Evolution followed by 1000 iterations of Covariance Matrix Adaptation Evolution Strategy (CMA-ES), the programme aims to refine shapes using physics-informed fitness evaluations. The objective of this programme is to demonstrate the applicability of machine learning in solving real-world engineering problems involving fluid dynamics, stability, and form efficiency.
 
 ## Background Information
 
@@ -154,7 +156,9 @@ After 2000 total optimisation steps (1000 DE + 1000 CMA-ES), the best solution a
 
 ### Side and Frontal Profile
 
-The final side profile exhibits a smooth, continuous curvature that peaks at the midsection and tapers symmetrically towards the nose and tail. This streamlined geometry minimises pressure drag by delaying flow separation, particularly at higher velocities where adverse pressure gradients are more influential. The use of cubic spline interpolation across eight control points ensures a high degree of shape control without introducing abrupt surface changes, which would otherwise elevate form drag. The frontal profile is elliptical, a shape known to reduce stagnation pressure at the leading edge while also constraining frontal area. This elliptical cross-section balances structural efficiency and aerodynamic performance, producing a compact footprint (0.7707 m diameter) relative to the overall length (3.0 m). Together, these forms suggest a high fineness ratio design that is representative of real-world applications such as drop tanks, unmanned aerial vehicles, or missile fuselages, where low drag and dynamic stability are critical.
+The final side profile exhibits a smooth, continuous curvature that peaks at the midsection and tapers symmetrically towards the nose and tail. This streamlined geometry minimises pressure drag by delaying flow separation, particularly at higher velocities where adverse pressure gradients are more influential. The use of cubic spline interpolation across eight control points ensures a high degree of shape control without introducing abrupt surface changes, which would otherwise elevate form drag. 
+
+The frontal profile is elliptical, a shape known to reduce stagnation pressure at the leading edge while also constraining frontal area. This elliptical cross-section balances structural efficiency and aerodynamic performance, producing a compact footprint (0.7707 m diameter) relative to the overall length (3.0 m). Together, these forms suggest a high fineness ratio design that is representative of real-world applications such as drop tanks, unmanned aerial vehicles, or missile fuselages, where low drag and dynamic stability are critical.
 
 ### Drag vs Generation
 
