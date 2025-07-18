@@ -141,7 +141,7 @@ The final side profile exhibits a smooth, continuous curvature that peaks at the
 ### Drag vs Generation
 
 <video controls>
-  <source src="../assets/shape_evolution.gif" type="video/mp4">
+  <source src="../assets/shape_evolution.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
