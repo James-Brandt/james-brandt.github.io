@@ -137,18 +137,24 @@ After 2000 total optimisation steps (1000 DE + 1000 CMA-ES), the best solution a
 | Frontal Width (m)    | 0.77          |
 | Frontal Length (m)   | 1.0           |
 
-### Side and Frontal Profile
+<figure>
+  <img src="/assets/images/final_profile.jpg" alt="Final Profile" style="max-width:100%;">
+  <figcaption><strong>Figure 1:</strong> Final profile of optimised shae showing smooth axisymmetric curvature, and a graph displaying the change in drag over each generation.</figcaption>
+</figure>
 
-![Final Profile](/assets/images/final_profile.jpg)
+<figure>
+  <video controls autoplay loop muted style="max-width:100%;">
+    <source src="/assets/videos/shape_evolution.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <figcaption><strong>Figure 2:</strong> Drag evolution over 1000 generations of Differential Evolution and CMA-ES.</figcaption>
+</figure>
+
+### Side and Frontal Profile
 
 The final side profile exhibits a smooth, continuous curvature that peaks at the midsection and tapers symmetrically towards the nose and tail. This streamlined geometry minimises pressure drag by delaying flow separation, particularly at higher velocities where adverse pressure gradients are more influential. The use of cubic spline interpolation across eight control points ensures a high degree of shape control without introducing abrupt surface changes, which would otherwise elevate form drag. The frontal profile is elliptical, a shape known to reduce stagnation pressure at the leading edge while also constraining frontal area. This elliptical cross-section balances structural efficiency and aerodynamic performance, producing a compact footprint (0.7707 m diameter) relative to the overall length (3.0 m). Together, these forms suggest a high fineness ratio design that is representative of real-world applications such as drop tanks, unmanned aerial vehicles, or missile fuselages, where low drag and dynamic stability are critical.
 
 ### Drag vs Generation
-
-<video controls autoplay loop muted style="width:100%; max-width:700px;">
-  <source src="/assets/images/shape_evolution.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
 
 The drag decreased significantly within the first 50 generations due to the elimination of grossly inefficient shapes. Subsequent refinements were smaller, with diminishing returns as the algorithms approached local minima. The graph plateaus around Generation 900, where the CMA-ES began fine-tuning within an already narrow solution space.
 
