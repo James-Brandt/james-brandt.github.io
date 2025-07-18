@@ -93,8 +93,14 @@ The simulation proceeds as follows:
 
 **1. Initial Geometry Generation:**
 ```python
-def generate_profile(control_points, length):
-    ...
+def generate_profile(control_points, length, num_points = 500):
+    xs_control = np.linspace(0, length, NUM_CONTROL_POINTS)
+    ys_control = np.abs(control_points)
+    ys_control[0] = ys_control[-1] = 0
+    interp_func = interp1d(xs_control, ys_control, kind = "cubic")
+    xs = np.linspace(0, length, num_points)
+    ys = interp_func(xs)
+    return xs, ys
 ```
 
 The ML algorithm modifies the shape by adjusting a vector of parameters that includes:
