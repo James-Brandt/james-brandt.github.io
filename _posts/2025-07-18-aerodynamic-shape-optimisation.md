@@ -26,17 +26,17 @@ Drag is the resistance force acting opposite to the motion of an object moving t
 - **Wake Drag** is associated with turbulence behind the object.
 
 These drag forces are typically modelled using:
-
 $$
 D = \frac{1}{2} \rho v^2 C_d A
 $$
 
 Where:
-- \( D \) is the drag force (N)
-- \( \rho \) is the air density (kg/m³)
-- \( v \) is the velocity (m/s)
-- \( C_d \) is the drag coefficient (dimensionless)
-- \( A \) is the frontal area (m²)
+
+- $D$ is the drag force (N)  
+- $\rho$ is the air density (kg/m³)  
+- $v$ is the velocity (m/s)  
+- $C_d$ is the drag coefficient (dimensionless)  
+- $A$ is the frontal area (m²)
 
 ### Reynolds Number
 
@@ -46,7 +46,7 @@ $$
 Re = \frac{\rho v L}{\mu}
 $$
 
-quantifies the flow regime, separating laminar and turbulent conditions. The critical Reynolds number of \(5 \times 10^5\) is used to switch between laminar and turbulent skin friction formulations.
+quantifies the flow regime, separating laminar and turbulent conditions. The critical Reynolds number of $5 \times 10^5$ is used to switch between laminar and turbulent skin friction formulations.
 
 ### Evolutionary Algorithms
 
@@ -137,7 +137,7 @@ After 2000 total optimisation steps (1000 DE + 1000 CMA-ES), the best solution a
 
 ### Side and Frontal Profile
 
-![Final Profile](/assets/images/final_profile.png)
+![Final Profile](/assets/images/final_profile.jpg)
 
 The final side profile exhibits a smooth, continuous curvature that peaks at the midsection and tapers symmetrically towards the nose and tail. This streamlined geometry minimises pressure drag by delaying flow separation, particularly at higher velocities where adverse pressure gradients are more influential. The use of cubic spline interpolation across eight control points ensures a high degree of shape control without introducing abrupt surface changes, which would otherwise elevate form drag. The frontal profile is elliptical, a shape known to reduce stagnation pressure at the leading edge while also constraining frontal area. This elliptical cross-section balances structural efficiency and aerodynamic performance, producing a compact footprint (0.7707 m diameter) relative to the overall length (3.0 m). Together, these forms suggest a high fineness ratio design that is representative of real-world applications such as drop tanks, unmanned aerial vehicles, or missile fuselages, where low drag and dynamic stability are critical.
 
