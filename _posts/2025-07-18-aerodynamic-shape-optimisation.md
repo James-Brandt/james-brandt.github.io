@@ -1,10 +1,13 @@
----
-layout: post
-title: "Aerodynamic Shape Optimization Using Machine Learning and Evolutionary Algorithms"
+layout: single
+title: "Aerodynamic Shape Optimisation Using Machine Learning and Evolutionary Algorithms"
 date: 2025-07-18
----
+author_profile: true
+read_time: true
+toc: true
+toc_sticky: true
+math: true
 
-# Reducing Drag with Evolutionary Algorithms: A Simulation-Based Study on Aerodynamic Shape Optimisation
+# Aerodynamic Shape Optimisation Using Machine Learning and Evolutionary Algorithms
 
 ## Rationale
 
@@ -24,9 +27,9 @@ Drag is the resistance force acting opposite to the motion of an object moving t
 
 These drag forces are typically modelled using:
 
-\[
+$$
 D = \frac{1}{2} \rho v^2 C_d A
-\]
+$$
 
 Where:
 - \( D \) is the drag force (N)
@@ -39,9 +42,9 @@ Where:
 
 The Reynolds number, given by:
 
-\[
+$$
 Re = \frac{\rho v L}{\mu}
-\]
+$$
 
 quantifies the flow regime, separating laminar and turbulent conditions. The critical Reynolds number of \(5 \times 10^5\) is used to switch between laminar and turbulent skin friction formulations.
 
@@ -98,7 +101,7 @@ The main function computes:
 - Smoothness and stability penalties.
 - Total drag (sum of all components). 
 ```python
-def evaluate_drag(params, velocity, target_mass, ...):
+def evaluate_drag(params, velocity, target_mass):
     ...
 ```
 
@@ -134,14 +137,14 @@ After 2000 total optimisation steps (1000 DE + 1000 CMA-ES), the best solution a
 
 ### Side and Frontal Profile
 
-![Final Profile](../assets/final_profile.png)
+![Final Profile](/assets/images/final_profile.png)
 
 The final side profile exhibits a smooth, continuous curvature that peaks at the midsection and tapers symmetrically towards the nose and tail. This streamlined geometry minimises pressure drag by delaying flow separation, particularly at higher velocities where adverse pressure gradients are more influential. The use of cubic spline interpolation across eight control points ensures a high degree of shape control without introducing abrupt surface changes, which would otherwise elevate form drag. The frontal profile is elliptical, a shape known to reduce stagnation pressure at the leading edge while also constraining frontal area. This elliptical cross-section balances structural efficiency and aerodynamic performance, producing a compact footprint (0.7707 m diameter) relative to the overall length (3.0 m). Together, these forms suggest a high fineness ratio design that is representative of real-world applications such as drop tanks, unmanned aerial vehicles, or missile fuselages, where low drag and dynamic stability are critical.
 
 ### Drag vs Generation
 
-<video controls>
-  <source src="../assets/shape_evolution.mp4" type="video/mp4">
+<video controls autoplay loop muted style="width:100%; max-width:700px;">
+  <source src="/assets/videos/shape_evolution.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
