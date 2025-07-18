@@ -1,3 +1,4 @@
+---
 layout: single
 title: "Aerodynamic Shape Optimisation Using Machine Learning and Evolutionary Algorithms"
 date: 2025-07-18
@@ -6,6 +7,7 @@ read_time: true
 toc: true
 toc_sticky: true
 math: true
+---
 
 # Aerodynamic Shape Optimisation Using Machine Learning and Evolutionary Algorithms
 
