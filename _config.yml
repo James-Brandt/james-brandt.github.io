@@ -45,7 +45,7 @@ plugins:
 author:
   name   : "James Brandt"
   avatar : "/assets/images/avatar.jpg"
-  bio    : "I am a first-year Aerospace Engineering student at QUT, deeply interested in artificial intelligence, robotics, and automation. This page documents my personal projects, including programming and research."
+  bio    : "This page documents my personal projects, including programming and research. I predominantly use Python on VSC, with plans to use C++ in the future. Click 'About' to learn more about me."
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
