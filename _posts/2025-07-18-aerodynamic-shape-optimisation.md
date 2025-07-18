@@ -87,12 +87,14 @@ The following constants and assumptions were applied:
 ### Simulation Procedure
 
 The simulation proceeds as follows:
+
 **1. Initial Geometry Generation:**
 ```python
 def generate_profile(control_points, length):
     ...
 ```
 8 control points define the half-profile, interpolated to generate a smooth axisymmetric shape.
+
 **2. Drag Evaluation:**
 The main function computes:
 - Frontal and wetted surface area.
