@@ -2,6 +2,7 @@
 layout: single
 title: "Aerodynamic Shape Optimisation Using Machine Learning and Evolutionary Algorithms"
 date: 2025-07-18
+excerpt: "Using evolutionary algorithms and simulation-based modelling to reduce aerodynamic drag through shape refinement and optimisation techniques."
 author_profile: true
 read_time: true
 toc: true
