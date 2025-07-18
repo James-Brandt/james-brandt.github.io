@@ -139,7 +139,7 @@ After 2000 total optimisation steps (1000 DE + 1000 CMA-ES), the best solution a
 | Frontal Length (m)   | 1.0           |
 
 <p align="center">
-  <img src="/assets/images/final_profile.png" alt="Final Profile" style="max-width:100%;">
+  <img src="/assets/images/final_profile.jpg" alt="Final Profile" style="max-width:100%;">
 </p>
 <p class="text-center"><strong>Figure 1:</strong> Final profile of optimised shape showing smooth axisymmetric curvature, and a graph displaying the change in drag over each generation</p>
 
