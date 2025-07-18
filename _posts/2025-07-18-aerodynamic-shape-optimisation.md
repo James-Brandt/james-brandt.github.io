@@ -145,6 +145,9 @@ After 2000 total optimisation steps (1000 DE + 1000 CMA-ES), the best solution a
 | Length (m)           | 3.0           |
 | Frontal Width (m)    | 0.77          |
 | Frontal Length (m)   | 1.0           |
+<p class="text-center" style="font-size:0.65rem;">
+  <strong>Table 1:</strong> Fully optimised parameters of the shape at its most optimal generation.
+</p>
 
 
 <p align="center">
