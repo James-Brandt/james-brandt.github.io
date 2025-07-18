@@ -140,10 +140,11 @@ After 2000 total optimisation steps (1000 DE + 1000 CMA-ES), the best solution a
 | Frontal Width (m)    | 0.77          |
 | Frontal Length (m)   | 1.0           |
 
+
 <p align="center">
   <img src="/assets/images/final_profile.jpg" alt="Final Profile" style="max-width:100%;">
 </p>
-<p class="text-center" style="font-size:0.6rem;"><strong>Figure 1:</strong> Final profile of optimised shape showing smooth axisymmetric curvature, and a graph displaying the change in drag over each generation</p>
+<p class="text-center" style="font-size:0.65rem;"><strong>Figure 1:</strong> Final profile of optimised shape showing smooth axisymmetric curvature, and a graph displaying the change in drag over each generation</p>
 
 <p align="center">
   <video controls autoplay loop muted playsinline style="max-width:100%;">
@@ -151,7 +152,7 @@ After 2000 total optimisation steps (1000 DE + 1000 CMA-ES), the best solution a
     Your browser does not support the video tag.
   </video>
 </p>
-<p class="text-center" style="font-size:0.6rem;"><strong>Figure 2:</strong> Drag evolution over 1000 generations of Differential Evolution and CMA-ES.</p>
+<p class="text-center" style="font-size:0.65rem;"><strong>Figure 2:</strong> Drag evolution over 1000 generations of Differential Evolution and CMA-ES.</p>
 
 
 ### Side and Frontal Profile
