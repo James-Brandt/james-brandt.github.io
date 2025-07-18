@@ -71,7 +71,7 @@ def satellite_dynamics(I, omega0, q0, t_max, dt):
     y0 = np.concatenate((omega0, q0))
     t_span = (0, t_max)
     t_eval = np.arange(0, t_max, dt)
-    sol = solve_ivp(euler_eqs, t_span, y0, t_eval=t_eval, method="RK45")
+    sol = solve_ivp(euler_eqs, t_span, y0, t_eval = t_eval, method = "RK45")
     return sol.t, sol.y
 ```
 
