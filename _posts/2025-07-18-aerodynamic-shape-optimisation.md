@@ -128,7 +128,7 @@ def evaluate_drag(params, velocity, target_mass):
 ```python
 result_de = differential_evolution(...)
 es = cma.CMAEvolutionStrategy(result_de.x.tolist(), 0.02)
-es.optimize(...)
+es.optimize(lambda p: evaluate_drag(p, velocity, target_mass, max_length, max_front_length), iterations = 1000)
 ```
 
 **4. Logging and Visualisation:**
