@@ -96,7 +96,13 @@ The simulation proceeds as follows:
 def generate_profile(control_points, length):
     ...
 ```
-8 control points define the half-profile, interpolated to generate a smooth axisymmetric shape.
+
+The ML algorithm modifies the shape by adjusting a vector of parameters that includes:
+- Eight vertical control point values, which define the curvature of the side profile using cubic spline interpolation. These values control the local radius along the object's length, effectively shaping the profile's smoothness, thickness distribution, and taper.
+- Total side profile length, which determines the overall body length of the shape and influences the fineness ratio.
+- Frontal profile length (width), which defines the elliptical diameter of the object's cross-section and directly affects the frontal area.
+
+These twelve parameters allow the ML algorithm to explore a wide design space of slender, symmetrical bodies while ensuring that the shape remains smooth and physically realistic. Although, the three-dimensional shape remains incredibly rudimentary when compared to the real-world applications of drag reduction. 
 
 **2. Drag Evaluation:**
 The main function computes:
@@ -188,7 +194,7 @@ This behaviour reflects a realistic optimisation curve, where coarse improvement
 
 ## Conclusion
 
-This project demonstrated the use of evolutionary algorithms to optimise a three-dimensional shape for minimal aerodynamic drag. By integrating mathematical modelling, physics-based penalty functions, and machine learning-based search, the program effectively identified efficient geometries under realistic constraints. The success of this approach in a simplified domain provides a valuable stepping stone toward more sophisticated design tools in aerospace, automotive, and civil engineering contexts. Continued development, particularly through integration with CFD and real-world testing, would significantly enhance the fidelity and applicability of such simulations.
+This project demonstrated the employment of evolutionary algorithms to optimise a superficial three-dimensional shape for minimal aerodynamic drag. By integrating mathematical modelling, physics-based penalty functions, and machine learning-based search, the program effectively identified efficient geometries under realistic constraints. The success of this approach in a simplified domain provides a valuable stepping stone toward more sophisticated design tools in aerospace, automotive, and civil engineering contexts. Continued development, particularly through integration with CFD and real-world testing, would significantly enhance the fidelity and applicability of such simulations.
 
 ## References
 
