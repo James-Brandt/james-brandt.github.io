@@ -142,3 +142,11 @@ Future extensions could include:
 - Kalman filtering for state estimation.
 
 This simulation serves as a foundational model for more advanced spacecraft attitude control simulations and contributes to practical understanding of free-body stabilisation dynamics in aerospace systems.
+
+## References
+- Sutton, G. P., & Biblarz, O. (2016). Rocket Propulsion Elements (9th ed.). Wiley.
+- Wertz, J. R. (1978). Spacecraft Attitude Determination and Control. D. Reidel Publishing Company.
+- NASA Glenn Research Center. (n.d.). Reynolds Number. Retrieved from https://www.grc.nasa.gov/www/k-12/airplane/reynolds.html
+- National Physical Laboratory (UK). (n.d.). Physical Constants and Units. Retrieved from https://www.npl.co.uk/
+- Kane, T. R., Likins, P. W., & Levinson, D. A. (1983). Spacecraft Dynamics. McGraw-Hill.
+- Virtanen, P. et al. (2020). SciPy 1.0: Fundamental Algorithms for Scientific Computing in Python. Nature Methods, 17, 261–272.
