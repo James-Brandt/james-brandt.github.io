@@ -93,6 +93,7 @@ The following constants and assumptions were applied:
 The simulation proceeds as follows:
 
 **1. Initial Geometry Generation:**
+
 ```python
 def generate_profile(control_points, length, num_points = 500):
     xs_control = np.linspace(0, length, NUM_CONTROL_POINTS)
@@ -117,7 +118,8 @@ The main function computes:
 - Reynolds number and skin friction.
 - Volume and mass penalties.
 - Smoothness and stability penalties.
-- Total drag (sum of all components). 
+- Total drag (sum of all components).
+
 ```python
 def evaluate_drag(params, velocity, target_mass):
     ...
@@ -126,6 +128,7 @@ def evaluate_drag(params, velocity, target_mass):
 **3. Optimisation:**
 - Differential Evolution runs for 1000 generations.
 - CMA-ES uses the DE result as a seed and performs 1000 iterations.
+
 ```python
 result_de = differential_evolution(...)
 es = cma.CMAEvolutionStrategy(result_de.x.tolist(), 0.02)
@@ -161,7 +164,7 @@ After 2000 total optimisation steps (1000 DE + 1000 CMA-ES), the best solution a
 <p align="center">
   <img src="/assets/images/final_profile.jpg" alt="Final Profile" style="max-width:100%;">
 </p>
-<p class="text-center" style="font-size:0.65rem;"><strong>Figure 1:</strong> Final profile of optimised shape showing smooth axisymmetric curvature, and a graph displaying the change in drag over each generation</p>
+<p class="text-center" style="font-size:0.65rem;"><strong>Figure 1:</strong> Final profile of optimised shape showing smooth axisymmetric curvature, and a graph displaying the change in drag over each generation.</p>
 
 <p align="center">
   <video controls autoplay loop muted playsinline style="max-width:100%;">
