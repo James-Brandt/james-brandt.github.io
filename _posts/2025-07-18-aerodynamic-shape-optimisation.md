@@ -9,8 +9,6 @@ toc_sticky: true
 math: true
 ---
 
-# Aerodynamic Shape Optimisation Using Machine Learning and Evolutionary Algorithms
-
 ## Rationale
 
 In mechatronic and aerospace design, aerodynamic efficiency is a critical determinant of performance, fuel consumption, and thus emissions. Minimising aerodynamic drag has been a long-term focus in engineering disciplines due to its consequences on energy efficiency and operating costs. However, manual optimisation of complex shapes remains time-consuming and limited by human intuition. This project investigates the utilisation of evolutionary algorithms to autonomously optimise a three-dimensional axisymmetric object’s geometry to reduce its aerodynamic drag. By simulating 1000 generations of Differential Evolution followed by 1000 iterations of Covariance Matrix Adaptation Evolution Strategy (CMA-ES), the programme aims to refine shapes using physics-informed fitness evaluations. The objective of this programme is to demonstrate the applicability of machine learning in solving real-world engineering problems involving fluid dynamics, stability, and form efficiency.
