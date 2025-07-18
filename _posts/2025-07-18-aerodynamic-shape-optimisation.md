@@ -26,6 +26,7 @@ Drag is the resistance force acting opposite to the motion of an object moving t
 - **Wake Drag** is associated with turbulence behind the object.
 
 These drag forces are typically modelled using:
+
 $$
 D = \frac{1}{2} \rho v^2 C_d A
 $$
@@ -137,18 +138,19 @@ After 2000 total optimisation steps (1000 DE + 1000 CMA-ES), the best solution a
 | Frontal Width (m)    | 0.77          |
 | Frontal Length (m)   | 1.0           |
 
-<figure>
-  <img src="/assets/images/final_profile.jpg" alt="Final Profile" style="max-width:100%;">
-  <figcaption><strong>Figure 1:</strong> Final profile of optimised shae showing smooth axisymmetric curvature, and a graph displaying the change in drag over each generation.</figcaption>
-</figure>
+<p align="center">
+  <img src="/assets/images/final_profile.png" alt="Final Profile" style="max-width:100%;">
+</p>
+<p class="text-center"><strong>Figure 1:</strong> Final profile of optimised shape showing smooth axisymmetric curvature, and a graph displaying the change in drag over each generation</p>
 
-<figure>
-  <video controls autoplay loop muted style="max-width:100%;">
+<p align="center">
+  <video controls autoplay loop muted playsinline style="max-width:100%;">
     <source src="/assets/videos/shape_evolution.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-  <figcaption><strong>Figure 2:</strong> Drag evolution over 1000 generations of Differential Evolution and CMA-ES.</figcaption>
-</figure>
+</p>
+<p class="text-center"><strong>Figure 2:</strong> Drag evolution over 1000 generations of Differential Evolution and CMA-ES.</p>
+
 
 ### Side and Frontal Profile
 
