@@ -76,6 +76,7 @@ defaults:
       comments: false
       share: true
       related: true
+      math: true
 
   - scope:
       path: "_pages"
