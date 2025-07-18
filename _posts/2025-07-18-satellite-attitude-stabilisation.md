@@ -23,33 +23,33 @@ Satellites in orbit are subject to a range of torques and perturbations. When ac
 The simulation assumes no external torques (i.e., a torque-free motion), meaning the angular momentum is conserved. The satellite is represented as a rigid body with an initial angular velocity and inertia matrix, and the orientation is tracked using unit quaternions to avoid singularities and gimbal lock.
 
 Key concepts:
-- Euler's rotational equations
-- Quaternion kinematics
-- Angular momentum conservation
-- Rotational kinetic energy
+- Euler's rotational equations.
+- Quaternion kinematics.
+- Angular momentum conservation.
+- Rotational kinetic energy.
 
 ## Methodology
 
 The model was constructed with the following components:
 
 1. **Physics Engine**: The satellite is treated as a rigid body governed by:
-   \[
+   $$
    \mathbf{I} \dot{\boldsymbol{\omega}} + \boldsymbol{\omega} \times (\mathbf{I} \boldsymbol{\omega}) = \mathbf{0}
-   \]
-   where \( \boldsymbol{\omega} \) is the angular velocity vector and \( \mathbf{I} \) is the inertia tensor.
+   $$
+   where $ \boldsymbol{\omega} $ is the angular velocity vector and $ \mathbf{I} $ is the inertia tensor.
 
 2. **Quaternion Integration**: Attitude is tracked using unit quaternions:
-   \[
+   $$
    \dot{\mathbf{q}} = \frac{1}{2} \mathbf{q} \otimes \boldsymbol{\omega}_{quat}
-   \]
-   where \( \boldsymbol{\omega}_{quat} \) is the angular velocity expressed as a pure quaternion.
+   $$
+   where $ \boldsymbol{\omega}_{quat} $ is the angular velocity expressed as a pure quaternion.
 
 3. **Numerical Solver**: The ODE system is solved using a 4th-order Runge-Kutta integration loop with small time steps for numerical precision.
 
 4. **Kinetic Quantities Tracked**:
-   - Angular velocity magnitude: \( \|\boldsymbol{\omega}(t)\| \)
-   - Angular acceleration magnitude: \( \|\dot{\boldsymbol{\omega}}(t)\| \)
-   - Rotational kinetic energy: \( KE = \frac{1}{2} \boldsymbol{\omega}^T \mathbf{I} \boldsymbol{\omega} \)
+   - Angular velocity magnitude: $ \|\boldsymbol{\omega}(t)\| $
+   - Angular acceleration magnitude: $ \|\dot{\boldsymbol{\omega}}(t)\| $
+   - Rotational kinetic energy: $ KE = \frac{1}{2} \boldsymbol{\omega}^T \mathbf{I} \boldsymbol{\omega} $
 
 5. **Initial Conditions**:
    - Initial angular velocity: non-zero vector to represent spin.
@@ -95,7 +95,7 @@ In addition, three key plots were generated from the simulation data to characte
 </p>
 <p class="text-center" style="font-size:0.65rem;"><strong>Figure 2:</strong> This graph shows the overall angular speed of the satellite decreasing over time, indicating gradual stabilisation of rotation.</p>
 
-The angular velocity \( \|\boldsymbol{\omega}(t)\| \) gradually decays and oscillates with decreasing amplitude. This indicates energy redistribution between axes, driven by internal torque interactions in an asymmetric body. Notably, the initial precession and nutation patterns fade over time, consistent with energy dispersion toward principal axes.
+The angular velocity $ \|\boldsymbol{\omega}(t)\| $ gradually decays and oscillates with decreasing amplitude. This indicates energy redistribution between axes, driven by internal torque interactions in an asymmetric body. Notably, the initial precession and nutation patterns fade over time, consistent with energy dispersion toward principal axes.
 
 ### 2. Angular Acceleration Magnitude Over Time
 
@@ -104,7 +104,7 @@ The angular velocity \( \|\boldsymbol{\omega}(t)\| \) gradually decays and oscil
 </p>
 <p class="text-center" style="font-size:0.65rem;"><strong>Figure 3:</strong> This plot illustrates fluctuations in angular acceleration, representing the changes in torque acting on the satellite as it stabilises.</p>
 
-Angular acceleration \( \|\dot{\boldsymbol{\omega}}(t)\| \) remains low in magnitude, reflecting the lack of external torque input. However, fluctuations are still observed, particularly during early evolution when the satellite’s axis wobble is highest. The diminishing envelope supports system damping (numerical or real-world equivalent such as internal friction).
+Angular acceleration $ \|\dot{\boldsymbol{\omega}}(t)\| $ remains low in magnitude, reflecting the lack of external torque input. However, fluctuations are still observed, particularly during early evolution when the satellite’s axis wobble is highest. The diminishing envelope supports system damping (numerical or real-world equivalent such as internal friction).
 
 ### 3. Rotational Kinetic Energy Over Time
 
@@ -113,7 +113,7 @@ Angular acceleration \( \|\dot{\boldsymbol{\omega}}(t)\| \) remains low in magni
 </p>
 <p class="text-center" style="font-size:0.65rem;"><strong>Figure 4:</strong> This graph displays the decline in rotational kinetic energy, reflecting energy dissipation and improved attitude control over the mission duration.</p>
 
-The satellite’s rotational kinetic energy \( KE(t) \) declines in a stepwise oscillatory pattern, consistent with energy transfer between rotational modes. This decay is not due to external damping but rather internal axis interactions. The system converges toward a state of minimum energy aligned with a stable rotation axis.
+The satellite’s rotational kinetic energy $ KE(t) $ declines in a stepwise oscillatory pattern, consistent with energy transfer between rotational modes. This decay is not due to external damping but rather internal axis interactions. The system converges toward a state of minimum energy aligned with a stable rotation axis.
 
 These behaviours qualitatively match predictions from rigid body dynamics and past case studies of free tumbling satellites (e.g., Explorer 1).
 
@@ -121,14 +121,14 @@ These behaviours qualitatively match predictions from rigid body dynamics and pa
 
 The simulation faithfully captures the nonlinear dynamics of a free rigid body in space, including precession, nutation, and stabilisation behaviour. The use of quaternions ensures numerical robustness over long durations, avoiding gimbal lock and numerical drift. The results are realistic and consistent with expected physical principles, particularly:
 
-- Conservation of angular momentum
-- Oscillatory transitions as energy is redistributed
-- Long-term convergence toward a stable rotational state
+- Conservation of angular momentum.
+- Oscillatory transitions as energy is redistributed.
+- Long-term convergence toward a stable rotational state.
 
 There are, however, simplifications:
-- The model assumes perfect rigidity with no internal damping
-- There are no external torques (e.g., gravity gradient, solar pressure)
-- No active control mechanisms are simulated
+- The model assumes perfect rigidity with no internal damping.
+- There are no external torques (e.g., gravity gradient, solar pressure).
+- No active control mechanisms are simulated.
 
 Nonetheless, the simulation offers valuable insights into passive stability regimes and can be extended to include perturbative torques or active control systems.
 
@@ -137,8 +137,8 @@ Nonetheless, the simulation offers valuable insights into passive stability regi
 This project demonstrates the utility of physics-based simulation in modelling satellite attitude dynamics. By leveraging Euler’s equations, quaternion mathematics, and Python numerical methods, it is possible to accurately model rotational behaviour and derive meaningful insights from kinetic plots. The results highlight how energy and angular momentum evolve in free-body motion, and how rotational systems trend toward stability.
 
 Future extensions could include:
-- Magnetorquer or reaction wheel control
-- Perturbation modelling (gravity gradient torque, SRP)
-- Kalman filtering for state estimation
+- Magnetorquer or reaction wheel control.
+- Perturbation modelling (gravity gradient torque, SRP).
+- Kalman filtering for state estimation.
 
 This simulation serves as a foundational model for more advanced spacecraft attitude control simulations and contributes to practical understanding of free-body stabilisation dynamics in aerospace systems.
