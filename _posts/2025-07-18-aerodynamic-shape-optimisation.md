@@ -157,15 +157,17 @@ After 2000 total optimisation steps (1000 DE + 1000 CMA-ES), the best solution a
 
 ### Side and Frontal Profile
 
-The final side profile exhibits a smooth, continuous curvature that peaks at the midsection and tapers symmetrically towards the nose and tail. This streamlined geometry minimises pressure drag by delaying flow separation, particularly at higher velocities where adverse pressure gradients are more influential. The use of cubic spline interpolation across eight control points ensures a high degree of shape control without introducing abrupt surface changes, which would otherwise elevate form drag. 
+The final side profile exhibits a smooth, continuous curvature that peaks at the midsection and tapers symmetrically towards the nose and tail (a symmetrical teardrop shape). This streamlined geometry minimises pressure drag by delaying flow separation, particularly at higher velocities where adverse pressure gradients are more influential. The use of cubic spline interpolation across eight control points ensures a high degree of shape control without introducing abrupt surface changes, which would otherwise elevate form drag. 
 
-The frontal profile is elliptical, a shape known to reduce stagnation pressure at the leading edge while also constraining frontal area. This elliptical cross-section balances structural efficiency and aerodynamic performance, producing a compact footprint (0.7707 m diameter) relative to the overall length (3.0 m). Together, these forms suggest a high fineness ratio design that is representative of real-world applications such as drop tanks, unmanned aerial vehicles, or missile fuselages, where low drag and dynamic stability are critical.
+The frontal profile is elliptical, a shape known to reduce stagnation pressure at the leading edge while also constraining frontal area. This elliptical cross-section balances structural efficiency and aerodynamic performance, producing a compact footprint (0.7707 m diameter) relative to the overall length (3.0 m). Note that the frontal profile is a 2-dimensional representation of how the shape would appear from the front, thus displaying the shape's largest surface area from the frontal plane.
+
+Together, these forms suggest a high fineness ratio design that is representative of real-world applications such as drop tanks, unmanned aerial vehicles, or missile fuselages, where low drag and dynamic stability are critical.
 
 ### Drag vs Generation
 
-The drag decreased significantly within the first 50 generations due to the elimination of grossly inefficient shapes. Subsequent refinements were smaller, with diminishing returns as the algorithms approached local minima. The graph plateaus around Generation 900, where the CMA-ES began fine-tuning within an already narrow solution space.
+As the number of generations increases from 0 to 50, the drag decreases significantly in decreasing increment, which is due to the elimination of grossly inefficient shapes early on. Subsequent refinements were smaller, with diminishing returns as the algorithms approached local minima. Onwards from generation 50, the data displays an inverse proportionality, as the drag decreases negligibly and plateaus. From here, the CMA-ES began optimisation within an already narrow solution space.
 
-This behaviour reflects a realistic optimisation curve, where coarse improvements precede subtle, high-fidelity tuning. Importantly, skipping the first five generations from the plot improves readability by excluding early-stage outliers.
+This behaviour reflects a realistic optimisation curve, where coarse improvements precede subtle, high-fidelity tuning. Evidently, only 400 generations are necessary for a decently accurate drag reduction to occur, but extremely precise operations may require more. Importantly, skipping the first five generations from the plot improves readability by excluding early-stage outliers.
 
 ## Evaluation
 
