@@ -15,11 +15,11 @@ Whether you're interested in collaborating, have questions about my work, or jus
 - [Email](mailto:jamesbrandt123@outlook.com)
 - [Phone](tel:+61400123456)
 
-### 📬 Contact Form *(Optional)*
+### Contact Form *(Optional)*
 
 If you'd rather use a form, fill this out:
 
-<form action="https://formspree.io/f/your-form-id" method="POST">
+<form action="https://formspree.io/f/xdkdkqeb" method="POST">
   <label for="name">Name</label><br>
   <input type="text" name="name" required><br><br>
 
@@ -31,5 +31,6 @@ If you'd rather use a form, fill this out:
 
   <button type="submit">Send</button>
 </form>
+
 
 *I'll do my best to reply within the same day.*
