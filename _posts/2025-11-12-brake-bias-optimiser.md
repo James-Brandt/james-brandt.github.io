@@ -63,7 +63,7 @@ $$
 - With clamping between 0 and 1, optimum front bias fraction is:
 
 $$
-\bias_{front} = \frac{F_{x,front,max}}{F_{x,front,max} + F_{x,rear,max}}
+bias_{front} = \frac{F_{x,front,max}}{F_{x,front,max} + F_{x,rear,max}}
 $$
 
 - The search range (for realism) is set to be 45% to 60% front.
