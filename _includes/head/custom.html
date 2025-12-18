@@ -4,6 +4,29 @@
   href="{{ '/assets/images/favicon-inactive.ico' | relative_url }}"
   type="image/x-icon"
 />
+<script defer>
+  document.addEventListener("DOMContentLoaded", () => {
+    const favicon = document.getElementById("dynamic-favicon");
+    if (!favicon) return;
+
+    function setFavicon(active) {
+      favicon.href = active
+        ? "{{ '/assets/images/favicon-active.ico' | relative_url }}"
+        : "{{ '/assets/images/favicon-inactive.ico' | relative_url }}";
+    }
+
+    function update() {
+      setFavicon(!document.hidden);
+    }
+
+    document.addEventListener("visibilitychange", update);
+    window.addEventListener("focus", update);
+    window.addEventListener("blur", update);
+
+    update(); // initial state
+  });
+</script>
+
 <script defer data-domain="james-brandt.github.io" src="https://plausible.io/js/script.outbound-links.js"></script>
 <script>
   window.MathJax = {
