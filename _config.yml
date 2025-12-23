@@ -45,7 +45,7 @@ plugins:
 author:
   name   : "James Brandt"
   avatar : "/assets/images/avatar.jpg"
-  bio    : "This page documents my personal projects, including programming and research. I predominantly use Python on VSC, with plans to use C++ in the future. Click 'About' to learn more about me."
+  bio    : "This page documents my personal projects, including programming and research. My posts here are summarised versions of projects I have undertaken in my free time. I predominantly use Python on VSC, with plans to use C++ in the future."
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
