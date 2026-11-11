@@ -106,12 +106,13 @@
 </style>
 
 <style>
-  /* Fix homepage left alignment */
+  /* Homepage: remove reserved sidebar column */
   @media (min-width: 64em) {
-    body.layout--home .archive {
+    body.layout--home #main .archive {
       float: none !important;
       width: 100% !important;
       margin-left: 0 !important;
+      margin-right: 0 !important;
       padding-left: 0 !important;
       padding-right: 0 !important;
     }
