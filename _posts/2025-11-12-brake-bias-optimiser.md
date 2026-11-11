@@ -3,7 +3,8 @@ layout: single
 title: "Optimising Brake Bias in Formula 1: A Physics-Based Mini-Project"
 date: 2025-11-12
 excerpt: "Modelling and optimising front-axle brake bias for F1-style corner entries using vehicle dynamics and simulation-based code."
-author_profile: true
+author_profile: false
+classes: wide
 read_time: true
 toc: true
 toc_sticky: true
