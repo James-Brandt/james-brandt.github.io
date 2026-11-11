@@ -1,6 +1,9 @@
 ---
-permalink: /about/
+layout: single
 title: "About"
+permalink: /about/
+author_profile: false
+classes: wide
 ---
 
 I am a second-year electrical and aerospace engineering undergraduate at QUT and a member of QUT's College of Excellence. I have practical experience collaborating with the QUT Motorsport team and the QUT Aerospace Society. I am eager to apply my skills in a team to address real-world engineering challenges.
