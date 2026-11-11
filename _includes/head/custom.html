@@ -1,33 +1,56 @@
+
+<!-- =========================================================
+     1. DYNAMIC FAVICON
+     Changes favicon depending on whether the tab is active.
+========================================================= -->
+
 <link
   rel="icon"
   id="dynamic-favicon"
   href="{{ '/assets/images/favicon-inactive.ico' | relative_url }}"
   type="image/x-icon"
 />
-<script defer>
+
+<script>
   document.addEventListener("DOMContentLoaded", () => {
     const favicon = document.getElementById("dynamic-favicon");
     if (!favicon) return;
 
-    function setFavicon(active) {
-      favicon.href = active
-        ? "{{ '/assets/images/favicon-active.ico' | relative_url }}"
-        : "{{ '/assets/images/favicon-inactive.ico' | relative_url }}";
+    const activeIcon = "{{ '/assets/images/favicon-active.ico' | relative_url }}";
+    const inactiveIcon = "{{ '/assets/images/favicon-inactive.ico' | relative_url }}";
+
+    function updateFavicon() {
+      favicon.href = document.hidden || !document.hasFocus()
+        ? inactiveIcon
+        : activeIcon;
     }
 
-    function update() {
-      setFavicon(!document.hidden);
-    }
+    document.addEventListener("visibilitychange", updateFavicon);
+    window.addEventListener("focus", updateFavicon);
+    window.addEventListener("blur", updateFavicon);
 
-    document.addEventListener("visibilitychange", update);
-    window.addEventListener("focus", update);
-    window.addEventListener("blur", update);
-
-    update(); // initial state
+    updateFavicon();
   });
 </script>
 
-<script defer data-domain="james-brandt.github.io" src="https://plausible.io/js/script.outbound-links.js"></script>
+
+<!-- =========================================================
+     2. ANALYTICS
+     Plausible Analytics with outbound link tracking.
+========================================================= -->
+
+<script
+  defer
+  data-domain="james-brandt.github.io"
+  src="https://plausible.io/js/script.outbound-links.js">
+</script>
+
+
+<!-- =========================================================
+     3. MATHJAX
+     Enables LaTeX equations in project posts.
+========================================================= -->
+
 <script>
   window.MathJax = {
     tex: {
@@ -41,73 +64,51 @@
     }
   };
 </script>
-<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+
+<!-- =========================================================
+     4. CUSTOM WEBSITE STYLING
+========================================================= -->
 
 <style>
-  /* Increase the overall website width */
-  #main {
-    max-width: 1600px;
+
+  /* ---------------------------------------------------------
+     4.1 GLOBAL LAYOUT
+     Consistent spacing across navigation and content.
+  --------------------------------------------------------- */
+
+  #main,
+  .masthead__inner-wrap {
+    max-width: none !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+    box-sizing: border-box;
   }
 
-  /* Expand the content area */
-  .page {
-    width: 100%;
-    padding-right: 0;
-  }
 
-  /* Keep project content readable */
-  .page__inner-wrap {
-    max-width: 100%;
-  }
+  /* ---------------------------------------------------------
+     4.2 CONTENT WIDTH
+     Remove unused sidebar space and expand content.
+  --------------------------------------------------------- */
 
-  /* Responsive code blocks */
-  .page__content pre {
-    overflow-x: auto;
-  }
-
-  /* Responsive images and videos */
-  .page__content img,
-  .page__content video {
-    max-width: 100%;
-    height: auto;
-  }
-</style>
-
-<style>
-  .page__content p,
-  .page__content li {
-    font-size: 16px;
-    line-height: 1.7;
-  }
-</style>
-
-<style>
-  /* Remove the empty left sidebar space */
   @media (min-width: 64em) {
-    .page {
-      float: none !important;
-      width: 100% !important;
-      padding-right: 0 !important;
-    }
 
+    .page,
     .archive {
       float: none !important;
       width: 100% !important;
       padding-right: 0 !important;
     }
-  }
 
-  /* Keep the overall content centred */
-  #main {
-    max-width: 1600px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-</style>
-
-<style>
-  /* Homepage: remove reserved sidebar column */
-  @media (min-width: 64em) {
+    /* Homepage-specific alignment */
     body.layout--home #main .archive {
       float: none !important;
       width: 100% !important;
@@ -116,47 +117,91 @@
       padding-left: 0 !important;
       padding-right: 0 !important;
     }
-  }
-</style>
 
-<style>
-  /* Compact footer */
+  }
+
+  .page__inner-wrap {
+    max-width: 100%;
+  }
+
+
+  /* ---------------------------------------------------------
+     4.3 TYPOGRAPHY
+     Smaller body text for a professional portfolio.
+  --------------------------------------------------------- */
+
+  .page__content p,
+  .page__content li {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+
+  /* ---------------------------------------------------------
+     4.4 PROJECT ARCHIVE
+     Hide the default "Recent Posts" heading.
+  --------------------------------------------------------- */
+
+  .archive__subtitle {
+    display: none !important;
+  }
+
+
+  /* ---------------------------------------------------------
+     4.5 CODE, IMAGES AND VIDEOS
+     Keep technical content responsive.
+  --------------------------------------------------------- */
+
+  .page__content pre {
+    overflow-x: auto;
+  }
+
+  .page__content img,
+  .page__content video {
+    max-width: 100%;
+    height: auto;
+  }
+
+
+  /* ---------------------------------------------------------
+     4.6 FOOTER LAYOUT
+     Compact footer with consistent horizontal margins.
+  --------------------------------------------------------- */
+
   .page__footer {
     margin-top: 2em !important;
     padding: 0 !important;
+    min-height: 0 !important;
   }
 
   .page__footer footer {
-    padding: 15px 0 !important;
-    margin: 0 !important;
+    max-width: none !important;
+    width: 100% !important;
+    box-sizing: border-box;
+    padding: 15px 32px !important;
+    margin: 0 auto !important;
+    min-height: 0 !important;
   }
 
-  /* Remove excessive spacing around footer links */
   .page__footer .footer__navigation {
     margin: 0 !important;
     padding: 0 !important;
   }
 
-  .page__footer .social-icons {
-    margin: 0 0 8px 0 !important;
-    padding: 0 !important;
-  }
 
-  /* Compact copyright text */
-  .page__footer-copyright {
-    margin: 5px 0 0 0 !important;
-    padding: 0 !important;
-    font-size: 0.7rem;
-  }
-</style>
+  /* ---------------------------------------------------------
+     4.7 FOOTER SOCIAL LINKS
+     Display GitHub and LinkedIn horizontally.
+  --------------------------------------------------------- */
 
-<style>
-  /* Display footer links horizontally */
   .page__footer .social-icons {
     display: flex;
     align-items: center;
     gap: 20px;
+    flex-wrap: wrap;
     list-style: none;
+    margin: 0 0 8px 0 !important;
+    padding: 0 !important;
   }
 
   .page__footer .social-icons li {
@@ -165,41 +210,39 @@
     padding: 0;
   }
 
-  /* Remove list bullets */
   .page__footer .social-icons li::marker {
     content: "";
   }
 
-  /* Remove the Recent Posts heading */
-  .archive__subtitle {
-    display: none !important;
+
+  /* ---------------------------------------------------------
+     4.8 FOOTER COPYRIGHT
+  --------------------------------------------------------- */
+
+  .page__footer-copyright {
+    margin: 5px 0 0 0 !important;
+    padding: 0 !important;
+    font-size: 0.7rem;
   }
 
-  /* Consistent width and alignment across website */
-  #main,
-  .masthead__inner-wrap {
-    max-width: none !important;
-    width: 100% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    box-sizing: border-box;
-    padding-left: 32px !important;
-    padding-right: 32px !important;
-  }
 
-    /* Align footer with header and main content */
-  .page__footer footer {
-    max-width: none !important;
-    width: 100% !important;
-    box-sizing: border-box;
-    padding: 15px 32px !important;
-    margin: 0 auto !important;
-  }
-  
-  /* Smaller footer margins on mobile */
+  /* ---------------------------------------------------------
+     4.9 MOBILE RESPONSIVENESS
+     Reduce horizontal padding on smaller screens.
+  --------------------------------------------------------- */
+
   @media (max-width: 767px) {
+
+    #main,
+    .masthead__inner-wrap {
+      padding-left: 16px !important;
+      padding-right: 16px !important;
+    }
+
     .page__footer footer {
       padding: 15px 16px !important;
     }
-}
+
+  }
+
 </style>
