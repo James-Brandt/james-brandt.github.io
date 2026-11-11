@@ -67,24 +67,30 @@ footer:
       url: "https://linkedin.com/in/jamеs"
 
 defaults:
+  # Project posts
   - scope:
       path: ""
       type: posts
     values:
       layout: single
-      author_profile: true
+      author_profile: false
       read_time: true
       comments: false
-      share: true
-      related: true
+      share: false
+      related: false
+      toc: true
+      toc_sticky: true
       math: true
+      classes: wide
 
+  # Other pages
   - scope:
       path: "_pages"
       type: pages
     values:
       layout: single
-      author_profile: true
+      author_profile: false
+      classes: wide
 
 category_archive:
   type: liquid
@@ -93,5 +99,3 @@ category_archive:
 tag_archive:
   type: liquid
   path: /tags/
-
-# Republish GitHub Pages site
