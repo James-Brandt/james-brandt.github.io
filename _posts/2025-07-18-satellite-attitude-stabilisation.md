@@ -3,7 +3,8 @@ layout: single
 title: "Satellite Attitude Stabilisation: A Physics-Based Simulation in Python"
 date: 2025-07-18
 excerpt: "A Python-simulated investigation into satellite attitude stabilisation, analysing the decay of angular velocity and rotational energy over time through realistic physics-based modelling."
-author_profile: true
+author_profile: false
+classes: wide
 read_time: true
 toc: true
 toc_sticky: true
