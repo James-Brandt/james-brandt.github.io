@@ -93,3 +93,5 @@ category_archive:
 tag_archive:
   type: liquid
   path: /tags/
+
+# Republish GitHub Pages site
