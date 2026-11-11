@@ -118,3 +118,55 @@
     }
   }
 </style>
+
+<style>
+  /* Compact footer */
+  .page__footer {
+    margin-top: 2em !important;
+    padding: 0 !important;
+  }
+
+  .page__footer footer {
+    padding: 15px 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Remove excessive spacing around footer links */
+  .page__footer .footer__navigation {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .page__footer .social-icons {
+    margin: 0 0 8px 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Compact copyright text */
+  .page__footer-copyright {
+    margin: 5px 0 0 0 !important;
+    padding: 0 !important;
+    font-size: 0.7rem;
+  }
+</style>
+
+<style>
+  /* Display footer links horizontally */
+  .page__footer .social-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+  }
+
+  .page__footer .social-icons li {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Remove list bullets */
+  .page__footer .social-icons li::marker {
+    content: "";
+  }
+</style>
