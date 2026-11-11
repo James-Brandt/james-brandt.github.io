@@ -1,6 +1,7 @@
 ---
 layout: home
-title: "Posts"
-permalink: /posts/
-author_profile: true
+title: "Projects"
+permalink: /
+author_profile: false
+classes: wide
 ---
